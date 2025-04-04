@@ -1,0 +1,180 @@
+/* Breakpoints */
+/* 
+  - xs: 0-575px (mobile)
+  - sm: 576px-767px (large mobile)
+  - md: 768px-991px (tablet)
+  - lg: 992px-1199px (desktop)
+  - xl: 1200px+ (large desktop)
+*/
+
+/* Mobile First Approach */
+/* Base styles are for mobile, then we add styles for larger screens */
+
+/* Small devices (large mobile, 576px and up) */
+@media (min-width: 576px) {
+  :root {
+    --font-size-base: 16px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  :root {
+    --font-size-base: 16px;
+  }
+  
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  :root {
+    --font-size-base: 16px;
+  }
+  
+  .container {
+    max-width: 960px;
+  }
+  
+  /* Navigation for desktop */
+  .nav_menu {
+    display: none;
+  }
+  
+  .nav_items {
+    position: static;
+    display: flex;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .nav_items .item {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Specific responsive styles for mobile */
+@media (max-width: 991px) {
+  /* Mobile navigation */
+  .nav_items {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--color-background);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 4rem;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    transition: right var(--transition-normal);
+    z-index: 100;
+  }
+  
+  .nav_items.active {
+    right: 0;
+  }
+  
+  .nav_items .item {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .nav_items li {
+    margin: 0.5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav_menu {
+    display: block;
+    cursor: pointer;
+    z-index: 101;
+  }
+  
+  /* Header content for mobile */
+  .main {
+    width: 90%;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  /* Services section for mobile */
+  .boxes {
+    grid-template-columns: 1fr;
+  }
+  
+  /* About section for mobile */
+  .about_heading {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .about .heading_1,
+  .about .para {
+    grid-column: 1;
+    text-align: center;
+  }
+  
+  /* Contact section for mobile */
+  .contact_box {
+    grid-template-columns: 1fr;
+  }
+  
+  .right_box {
+    text-align: center;
+  }
+  
+  /* Auth forms for mobile */
+  .form-row {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+  
+  .social-buttons {
+    flex-direction: column;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 575px) {
+  :root {
+    --font-size-base: 14px;
+    --font-size-4xl: 2.5rem;
+  }
+  
+  .footer_container {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer_col {
+    text-align: center;
+  }
+  
+  .footer_socials {
+    justify-content: center;
+  }
+  
+  .main_btn {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .auth-card {
+    padding: var(--spacing-md);
+  }
+}

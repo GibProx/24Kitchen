@@ -1,0 +1,205 @@
+/* ---------------------------
+   Header & Navigation Styles
+--------------------------- */
+header {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(../../img/bg.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+#main-header {
+  height: 30vh;
+  min-height: 250px;
+}
+
+/* Logo */
+.logo {
+  font-size: 2em;
+  font-weight: 600;
+  flex: 1;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 70px;
+  margin-right: 1%;
+}
+
+.logo span {
+  color: var(--color-text);
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background-color var(--transition-normal), padding var(--transition-normal);
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav_items {
+  display: flex;
+}
+
+.nav_items .item {
+  display: flex;
+  align-items: center;
+}
+
+.nav_items li {
+  list-style: none;
+  position: relative;
+}
+
+.nav_items li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--color-text);
+  transition: color var(--transition-normal);
+}
+
+.nav_items li a:hover,
+.nav_items li a.active {
+  color: var(--color-primary);
+}
+
+.nav_items li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: all var(--transition-normal);
+  transform: translateX(-50%);
+}
+
+.nav_items li:hover::after,
+.nav_items li a.active + li::after {
+  width: 70%;
+}
+
+.nav_menu {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+/* Auth buttons in header */
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-left: var(--spacing-lg);
+}
+
+.login-link {
+  color: var(--color-text);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-md);
+  transition: color var(--transition-normal);
+}
+
+.login-link:hover, 
+.login-link.active {
+  color: var(--color-primary);
+}
+
+.signup-btn {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 500;
+  transition: background-color var(--transition-normal);
+}
+
+.signup-btn:hover,
+.signup-btn.active {
+  background-color: var(--color-primary-hover);
+}
+
+/* Main Header Content */
+.main {
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--color-text);
+}
+
+.heading_1 {
+  font-size: var(--font-size-3xl);
+  font-family: var(--font-family-heading);
+  margin-bottom: var(--spacing-md);
+}
+
+.heading {
+  font-size: var(--font-size-4xl);
+  font-family: var(--font-family-heading);
+  margin-bottom: var(--spacing-lg);
+}
+
+.main_btn {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+}
+
+.btn1 {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+.btn1:hover {
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+.btn2 {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.btn2 i {
+  font-size: 2em;
+  color: var(--color-primary);
+}
+
+.btn2:hover {
+  background-color: var(--color-primary);
+}
+
+.btn2:hover i {
+  color: var(--color-text);
+}

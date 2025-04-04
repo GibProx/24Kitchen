@@ -1,0 +1,195 @@
+/* ---------------------------
+   Authentication Pages Styles
+--------------------------- */
+.auth-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-3xl) var(--spacing-md);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  background-color: var(--color-background-alt);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 500px;
+  padding: var(--spacing-2xl);
+  border: 1px solid var(--color-border);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.auth-header h1 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.auth-header p {
+  color: var(--color-text-muted);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: calc(-1 * var(--spacing-sm));
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.remember-me label {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.forgot-password {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  transition: color var(--transition-normal);
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.btn-auth {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: none;
+  padding: 0.75rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-normal);
+}
+
+.btn-auth:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.social-login {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+}
+
+.social-login p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+
+.social-login p::before,
+.social-login p::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.social-login p::before {
+  left: 0;
+}
+
+.social-login p::after {
+  right: 0;
+}
+
+.social-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color var(--transition-normal);
+  font-size: var(--font-size-sm);
+}
+
+.social-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.social-btn i {
+  font-size: 1.25rem;
+}
+
+.social-btn.google i {
+  color: #DB4437;
+}
+
+.social-btn.facebook i {
+  color: #4267B2;
+}
+
+.auth-footer {
+  margin-top: var(--spacing-xl);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.auth-footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Checkbox styling */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  margin-right: var(--spacing-sm);
+}
+
+.checkbox-group label {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.checkbox-group a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.checkbox-group a:hover {
+  text-decoration: underline;
+}

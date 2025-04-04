@@ -1,0 +1,344 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+CU:wght@100..400&display=swap');
+
+/* Import CSS modules */
+@import 'utils/variables.css';
+@import 'components/header.css';
+@import 'components/footer.css';
+@import 'components/forms.css';
+@import 'components/auth.css';
+@import 'components/recipes.css';
+@import 'utils/responsive.css';
+
+/* ---------------------------
+   Global Styles
+--------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  font-family: var(--font-family-base);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color var(--transition-normal);
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: var(--spacing-md);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-family-base);
+}
+
+input, select, textarea {
+  font-family: var(--font-family-base);
+}
+
+/* Container */
+.container {
+  width: var(--container-width);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Section */
+.section {
+  padding: var(--spacing-3xl) 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  transition: all var(--transition-normal);
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-alt {
+  background-color: var(--color-background-alt);
+}
+
+.mb-1 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.mb-2 {
+  margin-bottom: var(--spacing-md);
+}
+
+.mb-3 {
+  margin-bottom: var(--spacing-lg);
+}
+
+.mb-4 {
+  margin-bottom: var(--spacing-xl);
+}
+
+.mt-1 {
+  margin-top: var(--spacing-sm);
+}
+
+.mt-2 {
+  margin-top: var(--spacing-md);
+}
+
+.mt-3 {
+  margin-top: var(--spacing-lg);
+}
+
+.mt-4 {
+  margin-top: var(--spacing-xl);
+}
+
+/* Scroll to top button */
+.scroll-top {
+  position: fixed;
+  bottom: -50px;
+  right: var(--spacing-xl);
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: bottom var(--transition-normal);
+  z-index: 99;
+}
+
+.scroll-top.show {
+  bottom: var(--spacing-xl);
+}
+
+.scroll-top:hover {
+  transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Add this to the existing main.css file */
+
+/* Flash Messages */
+.flash-message {
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  position: relative;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.flash-success {
+  background-color: rgba(40, 167, 69, 0.2);
+  border: 1px solid var(--color-success);
+  color: var(--color-success);
+}
+
+.flash-error {
+  background-color: rgba(220, 53, 69, 0.2);
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+}
+
+.flash-info {
+  background-color: rgba(23, 162, 184, 0.2);
+  border: 1px solid var(--color-info);
+  color: var(--color-info);
+}
+
+.flash-warning {
+  background-color: rgba(255, 193, 7, 0.2);
+  border: 1px solid var(--color-warning);
+  color: var(--color-warning);
+}
+
+.close-flash {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* User menu styles */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.user-name {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.logout-btn {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 500;
+  transition: background-color var(--transition-normal);
+}
+
+.logout-btn:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-text);
+}
+
+/* Recipe form styles */
+.recipe-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.current-image {
+  margin-bottom: var(--spacing-md);
+}
+
+.edit-btn {
+  background-color: var(--color-info);
+}
+
+.edit-btn:hover {
+  background-color: rgba(23, 162, 184, 0.8);
+}
+
+.delete-btn {
+  background-color: var(--color-error);
+}
+
+.delete-btn:hover {
+  background-color: rgba(220, 53, 69, 0.8);
+}
+
+.alert {
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+}
+
+.alert-error {
+  background-color: rgba(220, 53, 69, 0.2);
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+}
+
+.has-error .form-control {
+  border-color: var(--color-error);
+}
+
+.my-recipes-actions {
+  margin-bottom: var(--spacing-xl);
+  text-align: right;
+}
+
+.no-recipes {
+  text-align: center;
+  padding: var(--spacing-xl);
+  background-color: var(--color-background-alt);
+  border-radius: var(--border-radius-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.no-recipes a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
